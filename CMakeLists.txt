@@ -5,5 +5,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project(cmaes_grasp_planning)
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/libcmaes)
 add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
 
