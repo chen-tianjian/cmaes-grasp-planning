@@ -22,9 +22,9 @@ export GRASPIT_PLUGIN_DIR=$PWD
 $GRASPIT/build/graspit_simulator -p libcmaesgraspplanning
 ```
 Example: 
-In the GraspIt GUI, load the "plannerMug.xml" world file (by "File-Open"), add the Epsilon quality metric (by "Grasp-Quality Measures").
-In the plugin GUI, load the "barret_hand_mug.xml" optimization config file (by "Load Config").
-Then click "Plan grasp".
+* In the GraspIt GUI, load the "plannerMug.xml" world file (by "File-Open"), add the Epsilon quality metric (by "Grasp-Quality Measures").
+* In the plugin GUI, load the "barret_hand_mug.xml" optimization config file (by "Load Config").
+* Then click "Plan grasp".
 
 Note:
 You can create other config files by following the "barret_hand_mug.xml", keep in mind that the dimension of the bounds and x0 need to match the robot hand (format: palm X, Y, Z, R, P, Y, and finger joint angles).
