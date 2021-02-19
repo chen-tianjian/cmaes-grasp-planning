@@ -4,7 +4,8 @@ A GraspIt plugin to search for good grasp(s) with an arbitrary hand, object, obs
 ## To install
 
 First install *GraspIt*: <http://graspit-simulator.github.io/build/html/installation_linux.html>
-Then install this package
+
+Then install this package:
 ```
 git clone --recursive git@github.com:chen-tianjian/cmaes-grasp-planning.git
 cd cmaes-grasp-planning
