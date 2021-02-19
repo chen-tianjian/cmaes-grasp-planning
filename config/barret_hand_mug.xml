@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!-- All translations are in mm, all angles are in rad -->
+<!-- lb, ub, x0 consists of: palm X, Y, Z, R, P, Y and finger joint angles -->
+<!-- Note that the dimension of finger joints needs to match the hand model -->
+
+<optimization_config>
+    <!-- bounds -->
+	<lb>-50 -50 0 -1.57 -1.57 -1.57 0 0 0 0</lb>
+	<ub>50 50 50 1.57 1.57 1.57 1.57 1.57 1.57 1.57</ub>
+
+    <!-- init joint vals -->
+    <x0>0 0 40 0 0 0 0 0 0 0</x0>
+
+    <!-- init std -->
+    <sigma0>10</sigma0>
+
+    <!-- popsize (-1 means to determine it automatically) -->
+    <lambda>50</lambda>
+
+    <!-- x tolerent -->
+    <xtol> 0.1 </xtol>
+
+    <!-- function tolerent -->
+    <ftol> 0.01 </ftol>
+
+    <!-- max num of iteration (-1 means to determine it automatically) -->
+    <max_iter>200</max_iter>
+
+    <!-- max num of function eval (-1 means to determine it automatically) -->
+    <max_feval>-1</max_feval>
+
+    <!-- render grasp search process -->
+    <render>false</render>
+
+    <!-- find best grasp ever seen or latest best grasp ("seen", "latest")-->
+    <!-- if converged, the latest best (converged) grasp is more robust (because similar grasps are already evaluated and have similar scores) -->
+    <!-- if not converged, the best grasp ever seen (by random sampling) has a higher score-->
+    <best_grasp>latest</best_grasp>
+
+</optimization_config>

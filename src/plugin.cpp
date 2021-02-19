@@ -1,5 +1,5 @@
-#include "cmaes_grasp_planning/cmaes_grasp_planning_dialog.h"
-#include "cmaes_grasp_planning/cmaes_grasp_planning_plugin.h"
+#include "cmaes_grasp_planning/dialog.h"
+#include "cmaes_grasp_planning/plugin.h"
 
 namespace cmaes_grasp_planning {
 

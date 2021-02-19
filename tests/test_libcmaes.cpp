@@ -111,6 +111,7 @@ TEST_F(TestLIBCMAESBasic, test_cmaparams)
     cmaparams.set_ftarget(1e-6); // stops the optimization whenever the objective function values gets below 1e-6
     cmaparams.set_fplot("tests/test_output.dat");
     cmaparams.set_mt_feval(true); // activates the parallel evaluation
+    cmaparams.set_algo(aCMAES);
 
     CMASolutions cmasols = cmaes<>(fsphere_lambda_expr, cmaparams);
     printResult(cmasols);
@@ -131,13 +132,12 @@ TEST_F(TestLIBCMAES, test_bounds)
     }
     GenoPheno<pwqBoundStrategy, linScalingStrategy> gp(lb, ub, dim); // genotype / phenotype transform associated to bounds.
     CMAParameters<GenoPheno<pwqBoundStrategy, linScalingStrategy>> cmaparams(dim,&x0.front(),sigma,-1,0,gp); // -1 for automatically decided lambda, 0 is for random seeding of the internal generator.           
-    // cmaparams.set_algo(aCMAES);
     CMASolutions cmasols = cmaes<GenoPheno<pwqBoundStrategy, linScalingStrategy>>(fsphere_lambda_expr,cmaparams);
     printResult(cmasols);
     cmasols.run_status();
 
     Eigen::VectorXd bestx = gp.pheno(cmasols.get_best_seen_candidate().get_x_dvec());
-    std::cout << "best x:" << bestx << std::endl;
+    // std::cout << "best x:" << bestx << std::endl;
     double fmin = fsphere_lambda_expr(bestx.data(), bestx.size());
     ASSERT_NEAR(fmin, 0, 1e-3);
 
