@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project(cmaes_grasp_planning)
 
-option(build_tests "Build tests" ON)
+option(build_tests "Build tests" OFF)
 option(debug "Build in debug mode to use gdb" OFF)
 
 
